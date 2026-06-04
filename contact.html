@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <!-- Navbar -->
     <div class="navbar-container">
         <div class="navbar left">
@@ -15,53 +14,86 @@
         </div>
 
         <div class="navbar right">
-            <a href="index.html">Home</a>
-            <a href="data.html">Data</a>
-            <a href="links.html">Links</a>
-            <a href="publications.html">Publications</a>
-            <a href="contact.html">Contact</a>
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="data.html">Data</a>
+            <a class="nav-link" href="links.html">Links</a>
+            <a class="nav-link" href="stories.html">Stories</a>
+            <a class="nav-link" href="publications.html">Publications</a>
+            <a class="nav-link" href="contact.html">People</a>
         </div>
     </div>
     <!-- Navbar End -->
 
     <div class="page-container">
 
-        <h3>Contact</h3>
+        <h2 style="text-align: center;">People</h2>
 
-        <ul>
-            <!--
-            To add another person to the contact page, copy the code snippet below,
-            fill in with the correct info, and then paste it into the ul
+        <h3>Principal Investigators</h3>
+        <div id="pi"></div>
 
-            <li>
-                <div class="contact-person-container">
-                    <b>MJ</b>
-                    <p>example@test.com</p>
-                    <p>123-123-1234</p>
+        <script>
+        fetch("./data/pi.json")
+        .then(response => response.json())
+        .then(publications => {
+            const container = document.getElementById("pi");
+            publications.forEach(p => {
+            container.innerHTML += `
+                <div class="publication-card">
+                    <div class="contact-container">
+                        <img class="contact-img" src="${p.pic_name}" alt="no img">
+                        <p class="contact-name">${p.name}</p>
+                    </div>
                 </div>
-            </li>
-            -->
-            
-            <li>
-                <div class="contact-person-container">
-                    <b>Alex Gustafson</b>
-                    <p>example@test.com</p>
-                    <p>123-123-1234</p>
+                <br><br>
+            `;
+            });
+        });
+        </script>
+
+
+        <h3>Graduate Students</h3>
+        <div id="grad-students"></div>
+
+        <script>
+        fetch("./data/grad-students.json")
+        .then(response => response.json())
+        .then(publications => {
+            const container = document.getElementById("grad-students");
+            publications.forEach(g => {
+            container.innerHTML += `
+                <div class="publication-card">
+                    <div class="contact-container">
+                        <img class="contact-img" src="${g.pic_name}" alt="no img">
+                        <p class="contact-name">${g.name}</p>
+                    </div>
                 </div>
-            </li>
+                <br><br>
+            `;
+            });
+        });
+        </script>
 
-            <li>
-                <div class="contact-person-container">
-                    <b>MJ</b>
-                    <p>example@test.com</p>
-                    <p>123-123-1234</p>
+        <h3>Researchers</h3>
+        <div id="researchers"></div>
+
+        <script>
+        fetch("./data/researchers.json")
+        .then(response => response.json())
+        .then(publications => {
+            const container = document.getElementById("researchers");
+            publications.forEach(r => {
+            container.innerHTML += `
+                <div class="publication-card">
+                    <div class="contact-container">
+                        <img class="contact-img" src="${r.pic_name}" alt="no img">
+                        <p class="contact-name">${r.name}</p>
+                    </div>
                 </div>
-            </li>
-
-
-            <!-- Paste new contact info here ^ -->
-        </ul>
-
+                <br><br>
+            `;
+            });
+        });
+        </script>
     </div>
 
 </body>

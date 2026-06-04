@@ -55,12 +55,12 @@ body {
 
 .right {
     display: flex;
-    justify-content: space-between;
-    margin-left: 10%;
-    margin-right: 10%;
+    justify-content: space-around;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
-a {
+.nav-link {
     text-decoration: none;
     color: black;
     font-family: 'Italiana', serif;
@@ -73,6 +73,46 @@ a:hover {
 
 /* END OF NAVBAR STYLING */
 
+/* Index Page*/
+
+.left-pic {
+    float: left;
+    width: 50%;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.right-pic {
+    float: right;
+    width: 50%;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.overview-section, .row-container {
+    overflow: auto;
+}
+
+/* END Index Page */
+
 iframe {
     margin-top: 50px;
+}
+
+.pub-title, .data-title {
+    color: blue;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contact-img {
+    width: 200px;
+}
+
+.contact-name {
+    margin-left: 25px;
 }
