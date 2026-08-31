@@ -54,7 +54,8 @@
 
 .publication-tools {
     display: flex;
-    margin-bottom: 2rem;
+    width: min(100% - clamp(2rem, 8vw, 7rem), 1120px);
+    margin: 2rem auto 2rem;
     padding: clamp(1.25rem, 3vw, 2rem);
     align-items: end;
     justify-content: space-between;
@@ -149,6 +150,8 @@
 
 #publications-container {
     display: grid;
+    width: min(100% - clamp(2rem, 8vw, 7rem), 1120px);
+    margin-inline: auto;
     gap: 1.25rem;
 }
 
